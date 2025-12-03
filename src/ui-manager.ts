@@ -84,7 +84,7 @@ export function displayWeather(weatherData: Weather){
 }
 
 export function displayGeoError(){
-    weatherLoading.textContent = "I need your permission to show weather 🥲"
+    weatherLoading.textContent = "A location permission would be nice :)"
 }
 
 export function showWeatherLoading(){
