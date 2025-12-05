@@ -1,6 +1,6 @@
-import type { ChuckJoke } from "../types.ts";
-import { validateChuckJoke } from "../utils/zodValidation.ts";
-import { get } from "./data-fetch-service.ts";
+import type { ChuckJoke } from "../../types.ts";
+import { validateChuckJoke } from "../../utils/zodValidation.ts";
+import { get } from "../data-fetch-service.ts";
 
 const url = import.meta.env.VITE_CHUCK_API_RANDOM;
 if(!url) throw new Error('Variable not defined!');

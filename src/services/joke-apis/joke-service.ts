@@ -1,6 +1,6 @@
 import { getRandomDadJoke as getRandomDadJoke } from "./dad-joke-service.ts"
-import { getRandomChuckJoke } from "./chuck-norris-joke-service.ts"
-import type { Joke } from "../types.ts";
+import type { Joke } from "../../types.ts";
+import { getRandomChuckJoke } from "./chuck-norris-joke-service.ts";
 
 let currentJoke: Joke;
 
@@ -25,7 +25,7 @@ export async function getRandomJoke(): Promise<Joke> {
     else throw new Error('Value out of bounds')
 }
 
-export function setCurentJoke(pJoke: Joke){
+export function setCurrentJoke(pJoke: Joke){
     currentJoke = pJoke;
 }
 

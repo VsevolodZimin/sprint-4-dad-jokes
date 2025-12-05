@@ -19,6 +19,6 @@ export function updateEntry(id: string, payload: JokeLogEntryUpdate) {
     if (entry) {
         (entry as JokeLogEntry) = { ...entry, ...payload }
         //Inefficient for large lists
-        logs = getAllEntries().map(pEntry => { return pEntry.id !== entry.id ? pEntry : entry; })
+        logs = getAllEntries().map(pEntry => { return pEntry.id !== entry.id ? pEntry : entry })
     }
 }
