@@ -1,5 +1,6 @@
 import z from 'zod';
-import { DadJokeZodSchema, ChuckJokeZodSchema, WeatherZodSchema } from './utils/zodValidation';
+import type { DadJokeZodSchema, ChuckJokeZodSchema } from '../features/joke/validation/zodValidations';
+import type { WeatherZodSchema } from '../features/weather/validation/zodValidations';
 
 export type DadJoke = z.infer<typeof DadJokeZodSchema>;
 export type ChuckJoke = z.infer<typeof ChuckJokeZodSchema>;

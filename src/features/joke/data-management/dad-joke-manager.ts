@@ -1,6 +1,6 @@
-import type { DadJoke } from "../../types.ts";
-import { validateDadJoke } from "../../utils/zodValidation.ts";
-import { get } from "../data-fetch-service.ts";
+import type { DadJoke } from "../../../utils/types.ts";
+import { get } from "../../../services/data-fetch-services/data-fetch-service.ts";
+import { validateDadJoke } from "../validation/zodValidations.ts";
 
 const url = import.meta.env.VITE_DAD_API_RANDOM;
 if(!url) throw new Error('Variable not defined!')

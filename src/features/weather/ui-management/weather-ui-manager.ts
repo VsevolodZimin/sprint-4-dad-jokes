@@ -1,5 +1,9 @@
-import type { Weather } from "../../types";
-import { hide, show } from "./utils";
+import type { Weather } from "../../../utils/types";
+import { hide, show } from "../../../UI/utils";
+// const icons = import.meta.glob('/src/resources/images/weather-icons/**/*', {
+//     eager: true,
+//     import: "default"
+// });
 
 const weatherIcon = document.getElementById("weather-icon") as HTMLImageElement;
 const weatherInfo = document.getElementById("weather-info") as HTMLImageElement;
@@ -8,16 +12,16 @@ const region = document.getElementById("region") as HTMLElement;
 const weatherLoading = document.getElementById("weather-loading") as HTMLButtonElement;
 
 export function setWeatherWidget(data: Weather){
-    weatherIcon.src = new URL(`resources/img/weather-icons/${data.current.condition.icon}`, window.location.href).href;
-    
-    // The text takes less time to load than an image, which leads to an ugly flash:
-    // 1) Text is loaded (temperature + region)
-    // 2) Image is loaded (pushes the text right, creating a flash)
-    // To reproduce the flash, extract lines 44 and 45 from inside the event handler     
-    weatherIcon.addEventListener('load', ()=>{        
-        temperature.textContent = `${data.current.temp_c} °C`;
-        region.textContent = `${data.location.name}`;
-    });
+    try {
+        weatherIcon.src = new URL(`/images/weather-icons/${data.current.condition.icon}`, import.meta.env.VITE_BASE_SERVER).href;
+        weatherIcon.addEventListener('load', ()=>{        
+            temperature.textContent = `${data.current.temp_c} °C`;
+            region.textContent = `${data.location.name}`;
+        });
+    }
+    catch(error){
+        alert(error);
+    }
 }
 
 export function displayWeather(weatherData: Weather){

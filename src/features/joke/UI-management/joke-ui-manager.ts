@@ -1,7 +1,7 @@
-import type { Score } from "../../types";
-import { SCORE } from "../../types"; 
-import { getRandomJoke, getCurrentJoke, setCurrentJoke } from "../joke-apis/joke-service";
-import { getAllEntries, updateEntry, saveEntry } from "../joke-log-sevice";
+import type { Score } from "../../../utils/types";
+import { SCORE } from "../../../utils/types"; 
+import { getRandomJoke, getCurrentJoke, setCurrentJoke } from "../data-management/joke-manager";
+import { getAllEntries, updateEntry, saveEntry } from "../../joke-logs/data-management/joke-logs";
 
 const jokeBox = document.getElementById("joke-message") as HTMLElement;
 const poorBtn = document.getElementById("poor") as HTMLButtonElement;

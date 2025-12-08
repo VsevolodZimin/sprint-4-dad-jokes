@@ -1,3 +1,6 @@
+import { parseWeather } from "../../../utils/dateUtils";
+import type { Weather } from "../../../utils/types";
+
 const DIR = {
     CLEAR: 'clear',
     CLOUDY: 'cloudy',
@@ -40,7 +43,7 @@ const ICON = {
     HAIL: 'hail.svg'
 }
 
-export const WEATHER_CONDITIONS = [
+const WEATHER_CONDITIONS = [
     {
         code : 1000,
         type: 'sunny',
@@ -475,4 +478,30 @@ export const WEATHER_CONDITIONS = [
              night: `${DIR.HAIL}/${ICON.ISOLATED_THUNDER}`,
         }
     }
-]
+];
+
+export function getAllWeatherConditions(){
+    return WEATHER_CONDITIONS;
+}
+
+export function getWeatherConditionByCode(weatherData: Weather){
+    const time = parseWeather(weatherData.location.localtime);
+    const condition = WEATHER_CONDITIONS.find(el => el.code === weatherData.current.condition.code);
+    if(!condition) throw new Error('Condition does not exist');
+    return {
+        current: {
+            condition: {
+                code: weatherData.current.condition.code,
+                text: weatherData.current.condition.text,
+                icon: time.getHours() > 5 && time.getHours() < 18 ? condition.icon.day : condition.icon.night
+            },
+            temp_c: weatherData.current.temp_c,
+            temp_f: weatherData.current.temp_f,
+        },
+        location: {
+            country: weatherData.location.country,
+            name: weatherData.location.name,
+            localtime: weatherData.location.localtime
+        }
+    }
+}

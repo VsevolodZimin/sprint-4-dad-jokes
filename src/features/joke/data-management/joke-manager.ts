@@ -1,6 +1,6 @@
-import { getRandomDadJoke as getRandomDadJoke } from "./dad-joke-service.ts"
-import type { Joke } from "../../types.ts";
-import { getRandomChuckJoke } from "./chuck-norris-joke-service.ts";
+import { getRandomDadJoke as getRandomDadJoke } from "./dad-joke-manager.ts"
+import type { Joke } from "../../../utils/types.ts";
+import { getRandomChuckJoke } from "./chuck-norris-joke-manager.ts";
 
 let currentJoke: Joke;
 

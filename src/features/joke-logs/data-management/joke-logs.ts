@@ -1,4 +1,4 @@
-import type { JokeLogEntry, JokeLogEntryUpdate, Score } from "../types.ts";
+import type { JokeLogEntry, JokeLogEntryUpdate, Score } from "../../../utils/types.ts";
 let logs: JokeLogEntry[] = [];
 
 export function getAllEntries() {
@@ -22,3 +22,4 @@ export function updateEntry(id: string, payload: JokeLogEntryUpdate) {
         logs = getAllEntries().map(pEntry => { return pEntry.id !== entry.id ? pEntry : entry })
     }
 }
+

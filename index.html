@@ -11,8 +11,8 @@
     <div class="absolute left-4 top-4">
         <div id="weather-widget">
             <div class="text-center italic text-gray-500" id="weather-loading">Loading...</div>
-            <div id="weather-info" class="hidden flex">
-                <img class="border-r-2" src="" id="weather-icon"/>
+            <div id="weather-info" class="flex hidden">
+                <img class="border-r-2" alt="weather-icon" id="weather-icon"/>
                 <div class="pl-3">
                     <div class="font-bold" id="temperature"></div>
                     <div class="italic text-gray-700" id="region"></div>
@@ -20,7 +20,7 @@
             </div>
         </div>
     </div>
-    <main class="w-[700px] h-[80vh] bg-[url('resources\img\background\blob.png')] bg-center bg-no-repeat bg-size-[700px_100%]
+    <main id="main-container" class="w-[700px] h-[80vh] bg-[url('/images/background/blob.png')] bg-center bg-no-repeat bg-size-[700px_100%]
         max-[700px]:bg-size-[100vw_80vh] 
         flex flex-col justify-center items-center">
         <div class="text-white font-bold text-xl mb-10
@@ -43,16 +43,5 @@
         " id="next">Next</button>
     </main>
     <script type="module" src="./src/index.ts"></script>
-    <script type="module" src="./src/types.ts"></script>
-    <script type="module" src="./src/ui-manager.ts"></script>
-    <script type="module" src="./src/services/chuck-norris-joke-service.ts"></script>
-    <script type="module" src="./src/services/dad-joke-service.ts"></script>
-    <script type="module" src="./src/services/data-fetch-service.ts"></script>
-    <script type="module" src="./src/services/joke-service.ts"></script>
-    <script type="module" src="./src/services/weather-service.ts"></script>
-    <script type="module" src="./src/utils/dateUtils.ts"></script>
-    <script type="module" src="./src/utils/zodValidation.ts"></script>
 </body>
 </html>
-
-

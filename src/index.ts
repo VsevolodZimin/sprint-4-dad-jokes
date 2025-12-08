@@ -1,7 +1,7 @@
-import { getRandomJoke, setCurrentJoke } from './services/joke-apis/joke-service.ts';
-import { setJoke } from './services/ui-services/ui-manager.ts';
-import { displayWeather, displayGeoError } from './services/ui-services/weather-ui-manager.ts';
-import { getCurrentWeather } from './services/weather-service.ts';
+import { getRandomJoke, setCurrentJoke } from "./features/joke/data-management/joke-manager.ts";
+import { setJoke } from "./features/joke/UI-management/joke-ui-manager.ts";
+import { displayWeather, displayGeoError } from "./features/weather/ui-management/weather-ui-manager.ts";
+import { getCurrentWeather } from "./features/weather/data-mangement/weather-manager.ts";
 
 try {
     const joke = await getRandomJoke();
@@ -15,5 +15,3 @@ catch(error){
     displayGeoError();
     console.log(error);
 }
-
-[1,2,3].concat([4,5], [6,7], [8,9]);
