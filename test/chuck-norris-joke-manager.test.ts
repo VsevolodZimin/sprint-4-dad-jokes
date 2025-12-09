@@ -9,7 +9,6 @@ vi.mock('../src/services/data-fetch-services/data-fetch-service.ts', () => ({
 }))
 
 describe('getRandomChuckJoke', () => {
-
     beforeEach(() => {
         vi.clearAllMocks();
     });

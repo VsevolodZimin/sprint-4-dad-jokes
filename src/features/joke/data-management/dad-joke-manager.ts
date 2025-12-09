@@ -7,7 +7,6 @@ if(!url) throw new Error('Variable not defined!')
 
 export async function getRandomDadJoke(): Promise<DadJoke> {
     const joke = (await get(url) as DadJoke);
-    console.log('joke is:', joke);
     const zodError = validateDadJoke(joke)
     if(zodError) {
         throw new Error(`Validation failed: ${zodError}`)
